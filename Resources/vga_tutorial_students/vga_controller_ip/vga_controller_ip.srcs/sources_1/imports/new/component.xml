@@ -1,0 +1,1736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>user.org</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>vga_controller</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>rstn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>rstn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.RSTN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>pixel_rstn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>pixel_rstn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.PIXEL_RSTN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>clk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK.ASSOCIATED_RESET">rstn</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK.ASSOCIATED_BUSIF">M_AXI</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>pixel_clk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>pixel_clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.PIXEL_CLK.ASSOCIATED_RESET">pixel_rstn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>M_AXI</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
+      <spirit:master>
+        <spirit:addressSpaceRef spirit:addressSpaceRef="M_AXI"/>
+      </spirit:master>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWADDR</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWLEN</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWLEN</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWSIZE</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWSIZE</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWBURST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWBURST</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWLOCK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWLOCK</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWCACHE</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWCACHE</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWPROT</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWQOS</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWQOS</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWUSER</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWUSER</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_AWREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_WDATA</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WSTRB</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_WSTRB</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WLAST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_WLAST</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_WVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_WREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_BID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_BRESP</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_BVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_BREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARADDR</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARLEN</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARLEN</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARSIZE</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARSIZE</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARBURST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARBURST</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARLOCK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARLOCK</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARCACHE</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARCACHE</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARPROT</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARQOS</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARQOS</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARUSER</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARUSER</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_ARREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_RID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_RDATA</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_RRESP</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RLAST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_RLAST</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_RVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_RREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXI_WID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>fifo_rst</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>fifo_rst</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:addressSpaces>
+    <spirit:addressSpace>
+      <spirit:name>M_AXI_VGA</spirit:name>
+      <spirit:range spirit:format="long">4294967296</spirit:range>
+      <spirit:width spirit:format="long">32</spirit:width>
+    </spirit:addressSpace>
+    <spirit:addressSpace>
+      <spirit:name>M_AXI</spirit:name>
+      <spirit:range spirit:format="long" spirit:resolve="user" spirit:minimum="4096" spirit:rangeType="long">4294967296</spirit:range>
+      <spirit:width spirit:format="long" spirit:resolve="user">64</spirit:width>
+    </spirit:addressSpace>
+  </spirit:addressSpaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>vga_controller</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>6fd837e9</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>vga_controller</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>6fd837e9</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>82bab233</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>VGA_R</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>VGA_G</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>VGA_B</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>VGA_HS</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>VGA_VS</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>clk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>pixel_clk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>rstn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>pixel_rstn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>fifo_rst</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>rfifo_count</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>switch_buffer</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>switch_buffer_ack</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWADDR</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWLEN</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWSIZE</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWBURST</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWLOCK</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWCACHE</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWPROT</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWQOS</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWUSER</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">4</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_AWREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_WID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">5</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_WDATA</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">63</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_WSTRB</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_WLAST</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_WVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_WREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_BID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_BRESP</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_BVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_BREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARADDR</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARLEN</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARSIZE</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARBURST</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARLOCK</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARCACHE</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARPROT</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARQOS</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARUSER</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">4</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_ARREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_RID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_RDATA</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">63</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_RRESP</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_RLAST</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_RVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXI_RREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="std_logic_vector(31 downto 0)">
+        <spirit:name>image_buffer1_baseaddr</spirit:name>
+        <spirit:displayName>Image Buffer1 Baseaddr</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.image_buffer1_baseaddr" spirit:bitStringLength="32">0x00000000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>horizontal_length</spirit:name>
+        <spirit:displayName>Horizontal Length</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.horizontal_length">0</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>vertical_length</spirit:name>
+        <spirit:displayName>Vertical Length</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.vertical_length">0</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>h_front_porch</spirit:name>
+        <spirit:displayName>H Front Porch</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.h_front_porch">0</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>h_sync_pulse</spirit:name>
+        <spirit:displayName>H Sync Pulse</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.h_sync_pulse">0</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>h_back_porch</spirit:name>
+        <spirit:displayName>H Back Porch</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.h_back_porch">0</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>v_front_porch</spirit:name>
+        <spirit:displayName>V Front Porch</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.v_front_porch">0</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>v_sync_pulse</spirit:name>
+        <spirit:displayName>V Sync Pulse</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.v_sync_pulse">0</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>v_back_porch</spirit:name>
+        <spirit:displayName>V Back Porch</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.v_back_porch">0</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic">
+        <spirit:name>h_sync_polarity</spirit:name>
+        <spirit:displayName>H Sync Polarity</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.h_sync_polarity" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic">
+        <spirit:name>v_sync_polarity</spirit:name>
+        <spirit:displayName>V Sync Polarity</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.v_sync_polarity" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic_vector(31 downto 0)">
+        <spirit:name>image_buffer2_baseaddr</spirit:name>
+        <spirit:displayName>Image Buffer2 Baseaddr</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.image_buffer2_baseaddr" spirit:bitStringLength="32">0x010E9001</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ip/fifo_generator_0/fifo_generator_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>vga_controller.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_028882bb</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="fifo_generator" xilinx:version="13.2">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ip/fifo_generator_0/fifo_generator_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>vga_controller.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="fifo_generator" xilinx:version="13.2">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/vga_controller_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_82bab233</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>vga_controller_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>horizontal_length</spirit:name>
+      <spirit:displayName>Horizontal Length</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.horizontal_length">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>vertical_length</spirit:name>
+      <spirit:displayName>Vertical Length</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.vertical_length">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>h_front_porch</spirit:name>
+      <spirit:displayName>H Front Porch</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.h_front_porch">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>h_sync_pulse</spirit:name>
+      <spirit:displayName>H Sync Pulse</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.h_sync_pulse">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>h_back_porch</spirit:name>
+      <spirit:displayName>H Back Porch</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.h_back_porch">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>v_front_porch</spirit:name>
+      <spirit:displayName>V Front Porch</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.v_front_porch">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>v_sync_pulse</spirit:name>
+      <spirit:displayName>V Sync Pulse</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.v_sync_pulse">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>v_back_porch</spirit:name>
+      <spirit:displayName>V Back Porch</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.v_back_porch">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>h_sync_polarity</spirit:name>
+      <spirit:displayName>H Sync Polarity</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.h_sync_polarity" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>v_sync_polarity</spirit:name>
+      <spirit:displayName>V Sync Polarity</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.v_sync_polarity" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">vga_controller_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>image_buffer2_baseaddr</spirit:name>
+      <spirit:displayName>Image Buffer2 Baseaddr</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.image_buffer2_baseaddr" spirit:bitStringLength="32">0x010E9001</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>image_buffer1_baseaddr</spirit:name>
+      <spirit:displayName>Image Buffer1 Baseaddr</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.image_buffer1_baseaddr" spirit:bitStringLength="32">0x00000000</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qzynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynquplus</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>vga_controller_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:coreRevision>209</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2020-01-16T18:20:51Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="user.org:user:vga_controller:1.0_ARCHIVE_LOCATION">/home/zaguila/Documents/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c74083_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37b9b6c7_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d7e4827_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f444db6_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e497e76_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65475802_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d9e8e7d_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bfdabb1_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@775b4da_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@aafa61e_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@706b9242_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@293b846_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70e22e8f_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bd25fac_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16ecc033_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@200a4d6a_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@652dc22c_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ef53897_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fadff77_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73ec6d77_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bd91ab4_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@748a9814_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3344be_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1738d25_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38f3dfe8_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f68ce42_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a28b307_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ec63642_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@314da3fd_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32eb634e_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e44a22_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a2d167f_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ba54c89_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@402409be_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b2c4be_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2af62eac_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49def82d_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36abc087_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a74bd4e_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76480cb_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d561ec9_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39a520cd_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e37b2f6_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cba3def_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7df9a7ff_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c743bf3_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@225584a4_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@315999cc_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71042f88_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@781a948f_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b232d82_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a9dd716_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3149d857_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38eb0f73_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41bdde05_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19490f72_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@728387cb_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25b87b40_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@567bbbde_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a9c0689_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57ae80ab_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ae38184_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30913076_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40c0deec_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60dc21be_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5adaf3cc_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@465059d9_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12c335a9_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ef2411e_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1247cac3_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1239728_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1edc019b_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@229ce92f_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30be2e0f_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@229ee709_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35467702_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fde3d84_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f7780d5_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7be2c702_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2abfd87_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34491cd4_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19a1a312_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@649940aa_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12d22b91_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38981566_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e81b0a7_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bfd1881_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3756b5ac_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47b19a13_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b30ac45_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b9024cd_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a15b644_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@290c1be5_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ff62d7d_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33680dd8_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7aa8d10e_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f00b17c_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@790a273a_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a3a5098_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7074b6c6_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@231ee992_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52a6e993_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e18ee76_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@472bb75c_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73fe6732_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72462f04_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a31f9ed_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@89a65c9_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34c47f0a_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43366587_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5719c2bb_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a8f3d64_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37d82506_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44e25831_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e818909_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b45019c_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72b649d0_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a747f48_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1913f6ab_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d3a203b_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a2ac21b_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ed508dd_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dc474a1_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@721301f3_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cc698a7_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@499468a0_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@750d206_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68c63939_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a7ec590_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@301cc52a_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61ab9cc6_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32c53f34_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15f5ba83_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38f3be19_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a911323_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62bfaed8_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@532e42df_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66717155_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d8485d9_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55cd4bf7_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ee338ab_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b03ae74_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f46f0_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47113f0e_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57ae5c9d_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20b760ad_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73037430_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c4171af_ARCHIVE_LOCATION">/home/zaguila/Classes/Spring2020/ENSC452/vga_tutorial_students/vga_controller_ip/vga_controller_ip.srcs/sources_1/imports/new</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="e4124c33"/>
+      <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="3cda7211"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="9097386c"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="738225e3"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="2de4d378"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="369e2f36"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

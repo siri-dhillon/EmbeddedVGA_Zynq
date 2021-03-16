@@ -1,0 +1,45 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.887952",
+   "Default View_TopLeft":"-399,-284",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 4 -x 920 -y 110 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 4 -x 920 -y 140 -defaultsOSRD
+preplace port VGA_HS -pg 1 -lvl 4 -x 920 -y -90 -defaultsOSRD
+preplace port VGA_VS -pg 1 -lvl 4 -x 920 -y 0 -defaultsOSRD
+preplace portBus VGA_R -pg 1 -lvl 4 -x 920 -y -120 -defaultsOSRD
+preplace portBus VGA_G -pg 1 -lvl 4 -x 920 -y -340 -defaultsOSRD
+preplace portBus VGA_B -pg 1 -lvl 4 -x 920 -y -310 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 3 -x 560 -y 220 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x -190 -y -230 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 3 -x 560 -y -20 -defaultsOSRD
+preplace inst axi_timer_0 -pg 1 -lvl 3 -x 560 -y -230 -defaultsOSRD
+preplace inst smartconnect_0 -pg 1 -lvl 2 -x 90 -y -230 -defaultsOSRD
+preplace inst vga_controller_0 -pg 1 -lvl 2 -x 90 -y -40 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 -340 -300 -90 -320 240 410 820
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 4 -350 -340 NJ -340 290J 400 800
+preplace netloc clk_wiz_0_clk_out1 1 1 2 -100J -330 300
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 3 -50 -350 260J -360 800
+preplace netloc proc_sys_reset_0_peripheral_reset 1 1 3 -60 430 NJ 430 850
+preplace netloc processing_system7_0_S_AXI_HP0_RCOUNT 1 1 2 -50 140 N
+preplace netloc vga_controller_0_VGA_R 1 2 2 230J -370 880J
+preplace netloc vga_controller_0_VGA_G 1 2 2 270J -350 890J
+preplace netloc vga_controller_0_VGA_B 1 2 2 250J -380 900J
+preplace netloc vga_controller_0_VGA_HS 1 2 2 310J -340 870J
+preplace netloc vga_controller_0_VGA_VS 1 2 2 320J -120 860J
+preplace netloc axi_timer_0_interrupt 1 2 2 320 390 830
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 3 -70 420 NJ 420 840
+preplace netloc processing_system7_0_DDR 1 3 1 880J 110n
+preplace netloc processing_system7_0_FIXED_IO 1 3 1 900J 140n
+preplace netloc vga_controller_0_M_AXI 1 2 1 260 -100n
+preplace netloc smartconnect_0_M00_AXI 1 2 1 280 -280n
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 3 -80 380 NJ 380 810
+levelinfo -pg 1 -370 -190 90 560 920
+pagesize -pg 1 -db -bbox -sgen -370 -390 1040 440
+"
+}
+{
+   "da_ps7_cnt":"1"
+}
