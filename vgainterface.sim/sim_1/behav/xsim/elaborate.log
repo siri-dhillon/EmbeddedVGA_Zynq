@@ -1,0 +1,81 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 5083eff870954961972b85c01c35c0a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L v_tc_v6_1_13 -L v_vid_in_axi4s_v4_0_9 -L v_axi4s_vid_out_v4_0_11 -L v_tc_v6_2_1 -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_13 -L xlconstant_v1_1_7 -L xlslice_v1_0_2 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vgaSystem_wrapper_behav xil_defaultlib.vgaSystem_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'mb_reset' is not connected on this instance [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.ip_user_files/bd/vgaSystem/sim/vgaSystem.v:70]
+WARNING: [VRFC 10-5021] port 'fsync_out' is not connected on this instance [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.ip_user_files/bd/vgaSystem/sim/vgaSystem.v:98]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package ieee.std_logic_arith
+Compiling package synopsys.attributes
+Compiling package ieee.std_logic_misc
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.std_logic_signed
+Compiling package v_tc_v6_2_1.video_ctrl_pkg
+Compiling package xpm.vcomponents
+Compiling package v_tc_v6_2_1.hwt_pkg
+Compiling package axi_lite_ipif_v3_0_4.ipif_pkg
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=37.12...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.vgaSystem_clk_wiz_0_0_clk_wiz
+Compiling module xil_defaultlib.vgaSystem_clk_wiz_0_0
+Compiling module xil_defaultlib.dataGen
+Compiling module xil_defaultlib.vgaSystem_dataGen_0_0
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fdre_v of entity unisim.FDRE [\FDRE(init='1')\]
+Compiling architecture fdr_v of entity unisim.FDR [fdr_default]
+Compiling architecture implementation of entity lib_cdc_v1_0_2.cdc_sync [\cdc_sync(c_vector_width=2,c_mtb...]
+Compiling architecture srl16e_v of entity unisim.SRL16E [\SRL16E(init="1111111111111111")...]
+Compiling architecture srl16_v of entity unisim.SRL16 [\SRL16(init="1111111111111111")(...]
+Compiling architecture imp of entity proc_sys_reset_v5_0_13.lpf [\lpf(c_ext_rst_width=4,c_aux_rst...]
+Compiling architecture imp of entity proc_sys_reset_v5_0_13.upcnt_n [\upcnt_n(c_size=6)\]
+Compiling architecture imp of entity proc_sys_reset_v5_0_13.sequence_psr [sequence_psr_default]
+Compiling architecture imp of entity proc_sys_reset_v5_0_13.proc_sys_reset [\proc_sys_reset(c_family="zynq",...]
+Compiling architecture vgasystem_rst_clk_wiz_0_148m_0_arch of entity xil_defaultlib.vgaSystem_rst_clk_wiz_0_148M_0 [vgasystem_rst_clk_wiz_0_148m_0_d...]
+Compiling module xpm.xpm_cdc_single(SRC_INPUT_REG=0)
+Compiling module v_axi4s_vid_out_v4_0_11.v_axi4s_vid_out_v4_0_11_cdc_sing...
+Compiling module xpm.xpm_fifo_rst_default
+Compiling module xpm.xpm_fifo_reg_bit
+Compiling module xpm.xpm_counter_updn(COUNTER_WIDTH=1...
+Compiling module xpm.xpm_counter_updn(COUNTER_WIDTH=1...
+Compiling module xpm.xpm_memory_base(MEMORY_TYPE=1,ME...
+Compiling module xpm.xpm_counter_updn(COUNTER_WIDTH=2...
+Compiling module xpm.xpm_fifo_base(FIFO_WRITE_DEPTH=1...
+Compiling module xpm.xpm_fifo_sync(FIFO_WRITE_DEPTH=1...
+Compiling module v_axi4s_vid_out_v4_0_11.v_axi4s_vid_out_v4_0_11_fifo_syn...
+Compiling module v_axi4s_vid_out_v4_0_11.v_axi4s_vid_out_v4_0_11_coupler(...
+Compiling module v_axi4s_vid_out_v4_0_11.v_axi4s_vid_out_v4_0_11_sync_def...
+Compiling module v_axi4s_vid_out_v4_0_11.v_axi4s_vid_out_v4_0_11_formatte...
+Compiling module v_axi4s_vid_out_v4_0_11.v_axi4s_vid_out_v4_0_11(C_FAMILY...
+Compiling module xil_defaultlib.vgaSystem_v_axi4s_vid_out_0_0
+Compiling module xpm.xpm_cdc_single(DEST_SYNC_FF=2,IN...
+Compiling architecture rtl of entity v_tc_v6_2_1.video_ctrl [\video_ctrl(c_family="virtex5",c...]
+Compiling architecture rtl of entity v_tc_v6_2_1.tc_generator [\tc_generator(c_max_pixels=4096,...]
+Compiling architecture rtl of entity v_tc_v6_2_1.tc_top [\tc_top(c_detect_en=0,c_det_achr...]
+Compiling architecture imp of entity v_tc_v6_2_1.v_tc [\v_tc(c_has_axi4_lite=0,c_gen_vi...]
+Compiling architecture vgasystem_v_tc_0_0_arch of entity xil_defaultlib.vgaSystem_v_tc_0_0 [vgasystem_v_tc_0_0_default]
+Compiling module xlconstant_v1_1_7.xlconstant_v1_1_7_xlconstant(CON...
+Compiling module xil_defaultlib.vgaSystem_xlconstant_0_0
+Compiling module xlslice_v1_0_2.xlslice_v1_0_2_xlslice(DIN_WIDTH...
+Compiling module xil_defaultlib.vgaSystem_xlslice_0_0
+Compiling module xlslice_v1_0_2.xlslice_v1_0_2_xlslice(DIN_WIDTH...
+Compiling module xil_defaultlib.vgaSystem_xlslice_0_1
+Compiling module xlslice_v1_0_2.xlslice_v1_0_2_xlslice(DIN_WIDTH...
+Compiling module xil_defaultlib.vgaSystem_xlslice_1_0
+Compiling module xil_defaultlib.vgaSystem
+Compiling module xil_defaultlib.vgaSystem_wrapper
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vgaSystem_wrapper_behav
