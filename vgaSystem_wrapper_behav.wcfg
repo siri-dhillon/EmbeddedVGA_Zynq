@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="vgaSystem_wrapper_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="vcomponents" />
+            <top_module name="vgaSystem_wrapper" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="90912361887fs"></ZoomStartTime>
+      <ZoomEndTime time="99882361888fs"></ZoomEndTime>
+      <Cursor1Time time="94598463569fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="340"></NameColumnWidth>
+      <ValueColumnWidth column_width="155"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="61" />
+   <wvobject fp_name="/vgaSystem_wrapper/sys_clock" type="logic">
+      <obj_property name="ElementShortName">sys_clock</obj_property>
+      <obj_property name="ObjectShortName">sys_clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/VGA_B" type="array">
+      <obj_property name="ElementShortName">VGA_B[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_B[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/VGA_G" type="array">
+      <obj_property name="ElementShortName">VGA_G[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_G[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/VGA_R" type="array">
+      <obj_property name="ElementShortName">VGA_R[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_R[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vid_hsync_0" type="logic">
+      <obj_property name="ElementShortName">vid_hsync_0</obj_property>
+      <obj_property name="ObjectShortName">vid_hsync_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vid_vsync_0" type="logic">
+      <obj_property name="ElementShortName">vid_vsync_0</obj_property>
+      <obj_property name="ObjectShortName">vid_vsync_0</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider8">
+      <obj_property name="label">Clock Gen</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/clk_wiz_0/clk_out1" type="logic">
+      <obj_property name="ElementShortName">clk_out1</obj_property>
+      <obj_property name="ObjectShortName">clk_out1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/clk_wiz_0/clk_in1" type="logic">
+      <obj_property name="ElementShortName">clk_in1</obj_property>
+      <obj_property name="ObjectShortName">clk_in1</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider11">
+      <obj_property name="label">Data Gen</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/dataGen_0/i_clk" type="logic">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/dataGen_0/i_reset_n" type="logic">
+      <obj_property name="ElementShortName">i_reset_n</obj_property>
+      <obj_property name="ObjectShortName">i_reset_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/dataGen_0/o_data" type="array">
+      <obj_property name="ElementShortName">o_data[23:0]</obj_property>
+      <obj_property name="ObjectShortName">o_data[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/dataGen_0/o_data_valid" type="logic">
+      <obj_property name="ElementShortName">o_data_valid</obj_property>
+      <obj_property name="ObjectShortName">o_data_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/dataGen_0/i_data_ready" type="logic">
+      <obj_property name="ElementShortName">i_data_ready</obj_property>
+      <obj_property name="ObjectShortName">i_data_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/dataGen_0/o_sof" type="logic">
+      <obj_property name="ElementShortName">o_sof</obj_property>
+      <obj_property name="ObjectShortName">o_sof</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/dataGen_0/o_eol" type="logic">
+      <obj_property name="ElementShortName">o_eol</obj_property>
+      <obj_property name="ObjectShortName">o_eol</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider19">
+      <obj_property name="label">VTG</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_tc_0/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_tc_0/clken" type="logic">
+      <obj_property name="ElementShortName">clken</obj_property>
+      <obj_property name="ObjectShortName">clken</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_tc_0/gen_clken" type="logic">
+      <obj_property name="ElementShortName">gen_clken</obj_property>
+      <obj_property name="ObjectShortName">gen_clken</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_tc_0/sof_state" type="logic">
+      <obj_property name="ElementShortName">sof_state</obj_property>
+      <obj_property name="ObjectShortName">sof_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_tc_0/hsync_out" type="logic">
+      <obj_property name="ElementShortName">hsync_out</obj_property>
+      <obj_property name="ObjectShortName">hsync_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_tc_0/hblank_out" type="logic">
+      <obj_property name="ElementShortName">hblank_out</obj_property>
+      <obj_property name="ObjectShortName">hblank_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_tc_0/vsync_out" type="logic">
+      <obj_property name="ElementShortName">vsync_out</obj_property>
+      <obj_property name="ObjectShortName">vsync_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_tc_0/vblank_out" type="logic">
+      <obj_property name="ElementShortName">vblank_out</obj_property>
+      <obj_property name="ObjectShortName">vblank_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_tc_0/active_video_out" type="logic">
+      <obj_property name="ElementShortName">active_video_out</obj_property>
+      <obj_property name="ObjectShortName">active_video_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_tc_0/resetn" type="logic">
+      <obj_property name="ElementShortName">resetn</obj_property>
+      <obj_property name="ObjectShortName">resetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_tc_0/fsync_out" type="array">
+      <obj_property name="ElementShortName">fsync_out[0:0]</obj_property>
+      <obj_property name="ObjectShortName">fsync_out[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider31">
+      <obj_property name="label">AXI Video Out </obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/aclken" type="logic">
+      <obj_property name="ElementShortName">aclken</obj_property>
+      <obj_property name="ObjectShortName">aclken</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/s_axis_video_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_video_tdata[23:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_video_tdata[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/s_axis_video_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_video_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_video_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/s_axis_video_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_video_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_video_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/s_axis_video_tuser" type="logic">
+      <obj_property name="ElementShortName">s_axis_video_tuser</obj_property>
+      <obj_property name="ObjectShortName">s_axis_video_tuser</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/s_axis_video_tlast" type="logic">
+      <obj_property name="ElementShortName">s_axis_video_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_video_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/fid" type="logic">
+      <obj_property name="ElementShortName">fid</obj_property>
+      <obj_property name="ObjectShortName">fid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vid_io_out_ce" type="logic">
+      <obj_property name="ElementShortName">vid_io_out_ce</obj_property>
+      <obj_property name="ObjectShortName">vid_io_out_ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vid_active_video" type="logic">
+      <obj_property name="ElementShortName">vid_active_video</obj_property>
+      <obj_property name="ObjectShortName">vid_active_video</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vid_vsync" type="logic">
+      <obj_property name="ElementShortName">vid_vsync</obj_property>
+      <obj_property name="ObjectShortName">vid_vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vid_hsync" type="logic">
+      <obj_property name="ElementShortName">vid_hsync</obj_property>
+      <obj_property name="ObjectShortName">vid_hsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vid_vblank" type="logic">
+      <obj_property name="ElementShortName">vid_vblank</obj_property>
+      <obj_property name="ObjectShortName">vid_vblank</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vid_hblank" type="logic">
+      <obj_property name="ElementShortName">vid_hblank</obj_property>
+      <obj_property name="ObjectShortName">vid_hblank</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vid_field_id" type="logic">
+      <obj_property name="ElementShortName">vid_field_id</obj_property>
+      <obj_property name="ObjectShortName">vid_field_id</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vid_data" type="array">
+      <obj_property name="ElementShortName">vid_data[23:0]</obj_property>
+      <obj_property name="ObjectShortName">vid_data[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vtg_vsync" type="logic">
+      <obj_property name="ElementShortName">vtg_vsync</obj_property>
+      <obj_property name="ObjectShortName">vtg_vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vtg_hsync" type="logic">
+      <obj_property name="ElementShortName">vtg_hsync</obj_property>
+      <obj_property name="ObjectShortName">vtg_hsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vtg_vblank" type="logic">
+      <obj_property name="ElementShortName">vtg_vblank</obj_property>
+      <obj_property name="ObjectShortName">vtg_vblank</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vtg_hblank" type="logic">
+      <obj_property name="ElementShortName">vtg_hblank</obj_property>
+      <obj_property name="ObjectShortName">vtg_hblank</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vtg_active_video" type="logic">
+      <obj_property name="ElementShortName">vtg_active_video</obj_property>
+      <obj_property name="ObjectShortName">vtg_active_video</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vtg_field_id" type="logic">
+      <obj_property name="ElementShortName">vtg_field_id</obj_property>
+      <obj_property name="ObjectShortName">vtg_field_id</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/vtg_ce" type="logic">
+      <obj_property name="ElementShortName">vtg_ce</obj_property>
+      <obj_property name="ObjectShortName">vtg_ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/locked" type="logic">
+      <obj_property name="ElementShortName">locked</obj_property>
+      <obj_property name="ObjectShortName">locked</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/overflow" type="logic">
+      <obj_property name="ElementShortName">overflow</obj_property>
+      <obj_property name="ObjectShortName">overflow</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/underflow" type="logic">
+      <obj_property name="ElementShortName">underflow</obj_property>
+      <obj_property name="ObjectShortName">underflow</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/fifo_read_level" type="array">
+      <obj_property name="ElementShortName">fifo_read_level[10:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_level[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/status" type="array">
+      <obj_property name="ElementShortName">status[31:0]</obj_property>
+      <obj_property name="ObjectShortName">status[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vgaSystem_wrapper/vgaSystem_i/v_axi4s_vid_out_0/sof_state_out" type="logic">
+      <obj_property name="ElementShortName">sof_state_out</obj_property>
+      <obj_property name="ObjectShortName">sof_state_out</obj_property>
+   </wvobject>
+</wave_config>

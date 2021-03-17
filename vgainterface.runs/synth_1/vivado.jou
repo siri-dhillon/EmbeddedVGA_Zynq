@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Mar 17 13:16:29 2021
+# Process ID: 10312
+# Current directory: C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1
+# Command line: vivado.exe -log vgaSystem_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vgaSystem_wrapper.tcl
+# Log file: C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/vgaSystem_wrapper.vds
+# Journal file: C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source vgaSystem_wrapper.tcl -notrace

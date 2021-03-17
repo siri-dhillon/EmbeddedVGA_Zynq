@@ -1,0 +1,298 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Mar 17 13:16:29 2021
+# Process ID: 10312
+# Current directory: C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1
+# Command line: vivado.exe -log vgaSystem_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vgaSystem_wrapper.tcl
+# Log file: C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/vgaSystem_wrapper.vds
+# Journal file: C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source vgaSystem_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+Command: synth_design -top vgaSystem_wrapper -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 12352
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem_wrapper' [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/hdl/vgaSystem_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:13]
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem_clk_wiz_0_0' [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem_clk_wiz_0_0' (1#1) [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem_dataGen_0_0' [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_dataGen_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem_dataGen_0_0' (2#1) [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_dataGen_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem_mux_0_0' [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_mux_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem_mux_0_0' (3#1) [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_mux_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem_rst_clk_wiz_0_148M_0' [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_rst_clk_wiz_0_148M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem_rst_clk_wiz_0_148M_0' (4#1) [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_rst_clk_wiz_0_148M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'vgaSystem_rst_clk_wiz_0_148M_0' is unconnected for instance 'rst_clk_wiz_0_148M' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:76]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'vgaSystem_rst_clk_wiz_0_148M_0' is unconnected for instance 'rst_clk_wiz_0_148M' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:76]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'vgaSystem_rst_clk_wiz_0_148M_0' is unconnected for instance 'rst_clk_wiz_0_148M' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:76]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'vgaSystem_rst_clk_wiz_0_148M_0' is unconnected for instance 'rst_clk_wiz_0_148M' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:76]
+WARNING: [Synth 8-7023] instance 'rst_clk_wiz_0_148M' of module 'vgaSystem_rst_clk_wiz_0_148M_0' has 10 connections declared, but only 6 given [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:76]
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem_v_axi4s_vid_out_0_0' [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_v_axi4s_vid_out_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem_v_axi4s_vid_out_0_0' (5#1) [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_v_axi4s_vid_out_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'vid_vblank' of module 'vgaSystem_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:83]
+WARNING: [Synth 8-7071] port 'vid_hblank' of module 'vgaSystem_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:83]
+WARNING: [Synth 8-7071] port 'vid_field_id' of module 'vgaSystem_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:83]
+WARNING: [Synth 8-7071] port 'locked' of module 'vgaSystem_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:83]
+WARNING: [Synth 8-7071] port 'overflow' of module 'vgaSystem_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:83]
+WARNING: [Synth 8-7071] port 'underflow' of module 'vgaSystem_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:83]
+WARNING: [Synth 8-7071] port 'fifo_read_level' of module 'vgaSystem_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:83]
+WARNING: [Synth 8-7071] port 'status' of module 'vgaSystem_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:83]
+WARNING: [Synth 8-7071] port 'sof_state_out' of module 'vgaSystem_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:83]
+WARNING: [Synth 8-7023] instance 'v_axi4s_vid_out_0' of module 'vgaSystem_v_axi4s_vid_out_0_0' has 30 connections declared, but only 21 given [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:83]
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem_v_tc_0_0' [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_v_tc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem_v_tc_0_0' (6#1) [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/.Xil/Vivado-10312-DESKTOP-S0HONA0/realtime/vgaSystem_v_tc_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'fsync_out' of module 'vgaSystem_v_tc_0_0' is unconnected for instance 'v_tc_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:105]
+WARNING: [Synth 8-7023] instance 'v_tc_0' of module 'vgaSystem_v_tc_0_0' has 11 connections declared, but only 10 given [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:105]
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem_xlconstant_0_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_xlconstant_0_0/synth/vgaSystem_xlconstant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 1'b1 
+	Parameter CONST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (7#1) [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem_xlconstant_0_0' (8#1) [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_xlconstant_0_0/synth/vgaSystem_xlconstant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem_xlslice_0_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_xlslice_0_0/synth/vgaSystem_xlslice_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 24 - type: integer 
+	Parameter DIN_FROM bound to: 3 - type: integer 
+	Parameter DIN_TO bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (9#1) [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem_xlslice_0_0' (10#1) [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_xlslice_0_0/synth/vgaSystem_xlslice_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem_xlslice_0_1' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_xlslice_0_1/synth/vgaSystem_xlslice_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 24 - type: integer 
+	Parameter DIN_FROM bound to: 11 - type: integer 
+	Parameter DIN_TO bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (10#1) [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem_xlslice_0_1' (11#1) [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_xlslice_0_1/synth/vgaSystem_xlslice_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'vgaSystem_xlslice_1_0' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_xlslice_1_0/synth/vgaSystem_xlslice_1_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 24 - type: integer 
+	Parameter DIN_FROM bound to: 19 - type: integer 
+	Parameter DIN_TO bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' (11#1) [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem_xlslice_1_0' (12#1) [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_xlslice_1_0/synth/vgaSystem_xlslice_1_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem' (13#1) [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/synth/vgaSystem.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'vgaSystem_wrapper' (14#1) [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/hdl/vgaSystem_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1000.727 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_clk_wiz_0_0/vgaSystem_clk_wiz_0_0/vgaSystem_clk_wiz_0_0_in_context.xdc] for cell 'vgaSystem_i/clk_wiz_0'
+Finished Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_clk_wiz_0_0/vgaSystem_clk_wiz_0_0/vgaSystem_clk_wiz_0_0_in_context.xdc] for cell 'vgaSystem_i/clk_wiz_0'
+Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_v_axi4s_vid_out_0_0/vgaSystem_v_axi4s_vid_out_0_0/vgaSystem_v_axi4s_vid_out_0_0_in_context.xdc] for cell 'vgaSystem_i/v_axi4s_vid_out_0'
+Finished Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_v_axi4s_vid_out_0_0/vgaSystem_v_axi4s_vid_out_0_0/vgaSystem_v_axi4s_vid_out_0_0_in_context.xdc] for cell 'vgaSystem_i/v_axi4s_vid_out_0'
+Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_v_tc_0_0/vgaSystem_v_tc_0_0/vgaSystem_v_tc_0_0_in_context.xdc] for cell 'vgaSystem_i/v_tc_0'
+Finished Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_v_tc_0_0/vgaSystem_v_tc_0_0/vgaSystem_v_tc_0_0_in_context.xdc] for cell 'vgaSystem_i/v_tc_0'
+Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_rst_clk_wiz_0_148M_0/vgaSystem_rst_clk_wiz_0_148M_0/vgaSystem_rst_clk_wiz_0_148M_0_in_context.xdc] for cell 'vgaSystem_i/rst_clk_wiz_0_148M'
+Finished Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_rst_clk_wiz_0_148M_0/vgaSystem_rst_clk_wiz_0_148M_0/vgaSystem_rst_clk_wiz_0_148M_0_in_context.xdc] for cell 'vgaSystem_i/rst_clk_wiz_0_148M'
+Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_mux_0_0/vgaSystem_mux_0_0/vgaSystem_mux_0_0_in_context.xdc] for cell 'vgaSystem_i/mux_0'
+Finished Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_mux_0_0/vgaSystem_mux_0_0/vgaSystem_mux_0_0_in_context.xdc] for cell 'vgaSystem_i/mux_0'
+Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_dataGen_0_0/vgaSystem_dataGen_0_0/vgaSystem_dataGen_0_0_in_context.xdc] for cell 'vgaSystem_i/dataGen_0'
+Finished Parsing XDC File [c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_dataGen_0_0/vgaSystem_dataGen_0_0/vgaSystem_dataGen_0_0_in_context.xdc] for cell 'vgaSystem_i/dataGen_0'
+Parsing XDC File [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.srcs/constrs_1/new/videoSystem.xdc]
+Finished Parsing XDC File [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.srcs/constrs_1/new/videoSystem.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.srcs/constrs_1/new/videoSystem.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/vgaSystem_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/vgaSystem_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1000.727 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_clk_wiz_0_0/vgaSystem_clk_wiz_0_0/vgaSystem_clk_wiz_0_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/GitHub/EmbeddedVGA_Zynq/vgainterface.gen/sources_1/bd/vgaSystem/ip/vgaSystem_clk_wiz_0_0/vgaSystem_clk_wiz_0_0/vgaSystem_clk_wiz_0_0_in_context.xdc, line 4).
+Applied set_property KEEP_HIERARCHY = SOFT for vgaSystem_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for vgaSystem_i/clk_wiz_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for vgaSystem_i/v_axi4s_vid_out_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for vgaSystem_i/v_tc_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for vgaSystem_i/rst_clk_wiz_0_148M. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for vgaSystem_i/xlconstant_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for vgaSystem_i/xlslice_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for vgaSystem_i/xlslice_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for vgaSystem_i/xlslice_2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for vgaSystem_i/mux_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for vgaSystem_i/dataGen_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1000.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1008.633 ; gain = 7.906
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1014.367 ; gain = 13.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1014.367 ; gain = 13.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1014.367 ; gain = 13.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1014.367 ; gain = 13.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1014.367 ; gain = 13.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1014.367 ; gain = 13.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-------------------------------+----------+
+|      |BlackBox name                  |Instances |
++------+-------------------------------+----------+
+|1     |vgaSystem_clk_wiz_0_0          |         1|
+|2     |vgaSystem_dataGen_0_0          |         1|
+|3     |vgaSystem_mux_0_0              |         1|
+|4     |vgaSystem_rst_clk_wiz_0_148M_0 |         1|
+|5     |vgaSystem_v_axi4s_vid_out_0_0  |         1|
+|6     |vgaSystem_v_tc_0_0             |         1|
++------+-------------------------------+----------+
+
+Report Cell Usage: 
++------+-----------------------------+------+
+|      |Cell                         |Count |
++------+-----------------------------+------+
+|1     |vgaSystem_clk_wiz_0          |     1|
+|2     |vgaSystem_dataGen_0          |     1|
+|3     |vgaSystem_mux_0              |     1|
+|4     |vgaSystem_rst_clk_wiz_0_148M |     1|
+|5     |vgaSystem_v_axi4s_vid_out_0  |     1|
+|6     |vgaSystem_v_tc_0             |     1|
+|7     |IBUF                         |     1|
+|8     |OBUF                         |    14|
++------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1014.367 ; gain = 13.641
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1014.367 ; gain = 13.641
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1014.367 ; gain = 13.641
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1014.367 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1026.918 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+48 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 1026.918 ; gain = 26.191
+INFO: [Common 17-1381] The checkpoint 'C:/GitHub/EmbeddedVGA_Zynq/vgainterface.runs/synth_1/vgaSystem_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file vgaSystem_wrapper_utilization_synth.rpt -pb vgaSystem_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 17 13:17:08 2021...
